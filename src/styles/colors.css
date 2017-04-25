@@ -1,0 +1,11 @@
+:root {
+  --white: #FFF;
+  --black: #000;
+  --violet--haiti: #242331;
+  --brown--deep-bronze: #533E2D;
+  --brown--deep-bronze--transparent: rgba(83, 62, 45, 0.9);
+  --orange--mai-tai: #A27035;
+  --yellow--tussock: #B88B4A;
+  --yellow--sandwisp: #DDCA7D;
+  --yellow--sandwisp--transparent: rgba(221, 202, 125, 0.3);
+}

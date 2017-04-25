@@ -1,0 +1,25 @@
+@keyframes bounce {
+  0% {
+    transform: scale(0.8);
+  }
+
+  65% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+.loader {
+  animation: bounce 500 ease-out;
+  margin: 100px auto;
+
+  width: 50px;
+  height: 50px;
+
+  border: 6px solid var(--yellow--sandwisp);
+  border-radius: 50%;
+  box-shadow: var(--white);
+}

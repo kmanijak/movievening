@@ -1,0 +1,50 @@
+@import "./reset.css";
+@import "./colors.css";
+@import "font-awesome-4.7.0/css/font-awesome.min.css";
+@import "https://fonts.googleapis.com/css?family=Raleway|Open+Sans:300";
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Raleway', sans-serif;
+
+  /*background-color: var(--violet--haiti);*/
+  background-color: var(--white);
+}
+
+a, a:visited {
+  position: relative;
+  color: var(--yellow--sandwisp);
+  text-decoration: none;
+
+  transition: 0.2s all ease-in;
+}
+
+a:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  content: '';
+
+  width: 100%;
+  height: 2px;
+  opacity: 0;
+
+  background-color: var(--yellow--tussock);
+  transition: 0.2s all ease-out;
+}
+
+a:hover, a.active {
+  color: var(--yellow--tussock);
+}
+
+a:active {
+  color: var(--orange--mai-tai);
+}
+
+a.active:after {
+  bottom: -4px;
+  opacity: 1;
+}

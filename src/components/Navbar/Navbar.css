@@ -1,0 +1,17 @@
+.navbar {
+  width: 100%;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 40px;
+}
+
+.navbar__navigation {
+  width: 100%;
+}
+
+.navbar__navigation a {
+  margin-right: 10px;
+}

@@ -1,0 +1,23 @@
+.app {
+  width: 100%;
+  height: 100%;
+
+  color: var(--yellow--sandwisp);
+}
+
+.app__header {
+  width: 100%;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+}
+
+.app__navigation {
+  width: 100%;
+  margin-left: 50px;
+}
+
+.app__navigation a {
+  margin-right: 10px;
+}

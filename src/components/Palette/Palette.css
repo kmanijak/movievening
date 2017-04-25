@@ -1,0 +1,12 @@
+.palette {
+  width: 100%;
+  height: 100%;
+
+  background: repeating-linear-gradient(
+    to right,
+    var(--brown--deep-bronze) 0, var(--brown--deep-bronze) 20px,
+    var(--yellow--tussock) 20px, var(--yellow--tussock) 40px,
+    var(--orange--mai-tai) 40px, var(--orange--mai-tai) 60px,
+    var(--yellow--sandwisp) 60px, var(--yellow--sandwisp) 80px
+  )
+}

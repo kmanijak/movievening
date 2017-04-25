@@ -1,0 +1,7 @@
+.article {
+  color: var(--yellow--sandwisp);
+  font-size: 14px;
+  margin-left: 60px;
+
+  width: 400px;
+}

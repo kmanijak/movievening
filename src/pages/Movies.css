@@ -1,0 +1,7 @@
+.page__movies {
+  display: flex;
+  flex-wrap: wrap;
+
+  max-height: calc(100vh - 88px);
+  overflow: auto;
+}
