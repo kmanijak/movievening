@@ -1,16 +1,16 @@
-import { getVODMovies } from './utils';
+import { getVODMovies } from './http';
 
 class MovieContainer {
   movies = [];
-  site = -1;
+  page = 1;
 
   getNextPage() {
-    if (this.site != null) {
-      this.site += 1;
-      return getVODMovies(this.site).then(newMovies => {
+    if (this.page != null) {
+      this.page += 1;
+      return getVODMovies(this.page).then(newMovies => {
         this.movies = this.movies.concat(newMovies);
         if (!newMovies.length) {
-          this.site = null;
+          this.page = null;
         }
       });
     } else {
@@ -19,7 +19,7 @@ class MovieContainer {
   }
 
   isNextPageAvailabe = () => {
-    return this.site != null
+    return this.page != null
   };
 
   getMovies = () => {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import MoviesContainer from '../modules/movies/movies';
+import MoviesContainer from '../modules/movies';
 
 import Page from './Page';
 import Movie from '../components/Movie';

@@ -3,13 +3,25 @@
 @import "font-awesome-4.7.0/css/font-awesome.min.css";
 @import "https://fonts.googleapis.com/css?family=Raleway|Open+Sans:300";
 
+html,
+body,
+#root,
+.app,
+.content {
+  min-height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
 body {
   margin: 0;
   padding: 0;
 
   font-family: 'Raleway', sans-serif;
 
-  /*background-color: var(--violet--haiti);*/
   background-color: var(--white);
 }
 
@@ -47,4 +59,25 @@ a:active {
 a.active:after {
   bottom: -4px;
   opacity: 1;
+}
+
+input {
+  border-bottom: 1px solid var(--yellow--tussock);
+  font-size: 20px;
+  color: var(--orange--mai-tai);
+}
+
+input::-webkit-input-placeholder {
+  color: var(--yellow--tussock--transparent)
+}
+
+button {
+  vertical-align: middle;
+  font-size: 14px;
+  padding: 14px 30px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  color: var(--white);
+  background-color: var(--brown--deep-bronze);
+  box-shadow: 2px 2px 8px 0 var(--black);
 }

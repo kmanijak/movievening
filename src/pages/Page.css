@@ -9,8 +9,6 @@
 }
 
 .page {
-  /*animation: fadeIn 0.3s linear;*/
-  margin-left: 180px;
-
+  animation: fadeIn 0.3s linear;
   overflow: auto;
 }
