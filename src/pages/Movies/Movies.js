@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import MoviesContainer from '../modules/movies';
+import MoviesContainer from '../../modules/movies';
 
-import Page from './Page';
-import Movie from '../components/Movie';
-import Loader from '../components/Loader';
+import Page from '../Page';
+import Movie from '../../components/Movie';
+import Loader from '../../components/Loader';
 
 import './Movies.css';
 

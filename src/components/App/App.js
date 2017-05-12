@@ -7,7 +7,7 @@ import Palette from '../Palette';
 import Home from '../../pages/Home';
 import Login from '../../pages/Login';
 import Movies from '../../pages/Movies';
-import Vote from '../../pages/Vote';
+import Voting from '../../pages/Voting';
 import Meetings from '../../pages/Meetings';
 
 import './App.css';
@@ -21,7 +21,7 @@ const App = () => (
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/movies" component={Movies} />
-        <Route path="/vote" component={Vote} />
+        <Route path="/vote" component={Voting} />
         <Route path="/meetings" component={Meetings} />
       </div>
     </Router>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Page from './Page';
-import Error from '../components/Error';
-import { login } from '../modules/http'
+import Page from '../Page';
+import Error from '../../components/Error';
+import { login } from '../../modules/http'
 import './Login.css';
 
 class Login extends Component {
