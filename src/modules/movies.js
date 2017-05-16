@@ -2,7 +2,7 @@ import { getVODMovies } from './http';
 
 class MovieContainer {
   movies = [];
-  page = 1;
+  page = 0;
 
   getNextPage() {
     if (this.page != null) {
