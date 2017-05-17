@@ -8,13 +8,22 @@ export async function getVODMovies(page) {
     .then(({ docs }) => docs.filter(object => object));
 }
 
-export async function getUsersData() {
-  return fetch('https://api.bamboohr.com/api/gateway.php/grandparade/v1/employees/directory', {
+export async function login(email, password) {
+  return fetch(createPath('login'), {
+    method: 'POST',
+    body: JSON.stringify({ email, password }),
     headers: {
-      'Authorization': `Basic ${btoa('6fed893143cf460d91f9d06ebd52623d12baceb0:x')}`,
-      'Accept': 'application/json'
+      'Content-Type': 'application/json'
     }
   })
-    .then(resp => resp.json())
-    .then(body => console.log(body));
+    .then(response => response.json())
+    .then(user => user);
+}
+
+export async function logout() {
+  return fetch(createPath('logout', {
+    method: 'post',
+  }))
+    .then(response => response.json())
+    .then(resp => resp);
 }

@@ -4,8 +4,9 @@ import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 
 import Title from '../Title';
+import User from '../User';
 
-const Navbar = () => (
+const Navbar = ({ user }) => (
   <div className="navbar">
     <Title />
     <nav className="navbar__navigation">
@@ -13,9 +14,9 @@ const Navbar = () => (
       <NavLink to="/movies">movies</NavLink>
       <NavLink to="/vote">vote</NavLink>
       <NavLink to="/meetings">meetings</NavLink>
-      <NavLink to="/login">login</NavLink>
-      <NavLink to="/registration">register</NavLink>
+      {!user && <NavLink to="/login">login</NavLink>}
     </nav>
+    {user && <User displayName={user.displayName} photoUrl={user.photoUrl} workEmail={user.workEmail} />}
   </div>
 );
 

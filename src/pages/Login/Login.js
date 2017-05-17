@@ -7,7 +7,7 @@ import './Login.css';
 class Login extends Component {
   state = {
     pending: false,
-    error: true
+    error: false
   };
 
   usernameInput = null;

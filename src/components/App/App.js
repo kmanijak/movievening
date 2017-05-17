@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import User from '../../modules/user';
 
 import Navbar from '../Navbar';
 import Palette from '../Palette';
@@ -9,7 +10,6 @@ import Movies from '../../pages/Movies';
 import Voting from '../../pages/Voting';
 import Meetings from '../../pages/Meetings';
 import Login from '../../pages/Login';
-import Registration from '../../pages/Registration';
 
 import './App.css';
 
@@ -18,13 +18,12 @@ const App = () => (
     <Palette height="8px" />
     <Router>
       <div className="content">
-        <Navbar />
+        <Navbar user={User.getUser()} />
         <Route exact path="/" component={Home} />
         <Route path="/movies" component={Movies} />
         <Route path="/vote" component={Voting} />
         <Route path="/meetings" component={Meetings} />
         <Route path="/login" component={Login} />
-        <Route path="/registration" component={Registration} />
       </div>
     </Router>
   </div>
