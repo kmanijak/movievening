@@ -34,11 +34,17 @@ export const loggedOutFailed = error => ({
   error,
 });
 
-export const logIn = (email, password) => dispatch => {
+export const logIn = (email, password, onSuccess = () => {}, onFailure = () => {}) => dispatch => {
   dispatch(loggingIn());
   login(email, password)
-    .then(user => dispatch(loggedIn(user)))
-    .catch(error => dispatch(loggedInFailed(error)))
+    .then(user => {
+      dispatch(loggedIn(user));
+      onSuccess();
+    })
+    .catch(error => {
+      dispatch(loggedInFailed(error));
+      onFailure();
+    })
 };
 
 export const logOut = () => dispatch => {

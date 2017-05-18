@@ -7,8 +7,12 @@ const mapStateToProps = state => ({
   error: getError(state),
 });
 
-const mapDispatchToProps = dispatch => ({
-  logIn: (email, password) => dispatch(logIn(email, password)),
+const mapDispatchToProps = (dispatch, { history }) => ({
+  logIn: (email, password) => {
+    const routeChange = () => history.push('/movies');
+
+    dispatch(logIn(email, password, routeChange))
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
