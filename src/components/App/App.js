@@ -1,15 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import User from '../../modules/user';
 
-import Navbar from '../Navbar';
+import Navbar from '../../containers/Navbar';
 import Palette from '../Palette';
 
 import Home from '../../pages/Home';
 import Movies from '../../pages/Movies';
 import Voting from '../../pages/Voting';
 import Meetings from '../../pages/Meetings';
-import Login from '../../pages/Login';
+import Login from '../../containers/Login';
 
 import './App.css';
 
@@ -18,7 +17,7 @@ const App = () => (
     <Palette height="8px" />
     <Router>
       <div className="content">
-        <Navbar user={User.getUser()} />
+        <Navbar />
         <Route exact path="/" component={Home} />
         <Route path="/movies" component={Movies} />
         <Route path="/vote" component={Voting} />

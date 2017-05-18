@@ -1,46 +1,42 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Page from '../Page';
-import Error from '../../components/Error';
-import { login } from '../../modules/http'
+import Loader from '../../components/Loader';
 import './Login.css';
 
 class Login extends Component {
-  state = {
-    pending: false,
-    error: false
-  };
-
-  usernameInput = null;
+  emailInput = null;
   passwordInput = null;
 
   handleLogin = () => {
-    this.setState({ pending: true });
-
-    const username = this.usernameInput.value;
+    const email = this.emailInput.value;
     const password = this.passwordInput.value;
 
-    login(username, password)
-      .then(() => {
-        this.props.history.push('/movies');
-      })
-      .catch(() => {
-        this.setState({ pending: false, error: true });
-        this.passwordInput.value = '';
-      })
+    this.props.logIn(email, password);
   };
 
   render() {
+    const { pending } = this.props;
     return (
       <Page className="login login__page">
-        <h1 className="login__header">Use your BambooHR credentials to log in*</h1>
-        {this.state.error && <Error error="Couldn't log in. Try again" />}
-        <input className="login__input" type="text" placeholder="Login" ref={ref => this.usernameInput = ref} />
+        <h1 className="login__header">Use your BambooHR e-mail to log in*</h1>
+        <input className="login__input" type="text" placeholder="E-mail" ref={ref => this.emailInput = ref} />
         <input className="login__input" type="password" placeholder="Password" ref={ref => this.passwordInput = ref} />
-        <button className="login__button" onClick={this.handleLogin}>Log in</button>
-        <p className="login__footer">* BambooHR is used only as 3rd party authentication service.</p>
+        {
+          pending ?
+            <Loader /> :
+            <button className="login__button" onClick={this.handleLogin}>Log in</button>
+        }
+        <p className="login__footer">* BambooHR is used as a 3rd party user data provider.</p>
       </Page>
     );
   }
 }
+
+Login.propsType = {
+  pending: PropTypes.bool,
+  error: PropTypes.string,
+  logIn: PropTypes.func,
+};
 
 export default Login;
