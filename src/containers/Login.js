@@ -12,7 +12,7 @@ const mapDispatchToProps = (dispatch, { history }) => ({
     const routeChange = () => history.push('/movies');
 
     dispatch(logIn(email, password, routeChange))
-  }
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

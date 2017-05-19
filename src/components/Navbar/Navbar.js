@@ -6,7 +6,7 @@ import './Navbar.css';
 import Title from '../Title';
 import User from '../User';
 
-const Navbar = ({ user }) => (
+const Navbar = ({ user, logOut }) => (
   <div className="navbar">
     <Title />
     <nav className="navbar__navigation">
@@ -16,7 +16,7 @@ const Navbar = ({ user }) => (
       <NavLink to="/meetings">meetings</NavLink>
       {!user && <NavLink to="/login">login</NavLink>}
     </nav>
-    {user && <User displayName={user.displayName} photoUrl={user.photoUrl} workEmail={user.workEmail} />}
+    {user && <User displayName={user.displayName} photoUrl={user.photoUrl} onLogoutClick={logOut} />}
   </div>
 );
 

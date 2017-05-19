@@ -21,9 +21,9 @@ export async function login(email, password) {
 }
 
 export async function logout() {
-  return fetch(createPath('logout', {
-    method: 'post',
-  }))
-    .then(response => response.json())
+  return fetch(createPath('logout'), {
+    method: 'POST',
+  })
+    .then(response => response.text())
     .then(resp => resp);
 }

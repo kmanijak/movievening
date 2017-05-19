@@ -1,9 +1,17 @@
 import { connect } from 'react-redux';
-import { getUserDetails } from '../modules/user';
+import { getUserDetails, logOut } from '../modules/user';
 import Navbar from '../components/Navbar';
 
 const mapStateToProps = state => ({
   user: getUserDetails(state),
 });
 
-export default connect(mapStateToProps)(Navbar);
+const mapDispatchToProps = (dispatch, { history }) => ({
+  logOut: () => {
+    const routeChange = () => history.push('/login');
+
+    dispatch(logOut(routeChange))
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

@@ -47,9 +47,15 @@ export const logIn = (email, password, onSuccess = () => {}, onFailure = () => {
     })
 };
 
-export const logOut = () => dispatch => {
+export const logOut = (onSuccess = () => {}, onFailure = () => {}) => dispatch => {
   dispatch(loggingOut());
   logout()
-    .then(user => dispatch(loggedOut(user)))
-    .catch(error => dispatch(loggedOutFailed(error)))
+    .then(user => {
+      dispatch(loggedOut(user));
+      onSuccess();
+    })
+    .catch(error => {
+      dispatch(loggedOutFailed(error));
+      onFailure();
+    })
 };
